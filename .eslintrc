@@ -1,16 +1,13 @@
 {
-  "root": true,
-  "extends": [
-    "standard"
-  ],
-  "rules": {
-    "space-before-function-paren": 0,
-    "semi": [
-      2,
-      "always"
-    ]
-  },
-  "env": {
-    "node": true
-  }
+	"root": true,
+	"extends": ["standard"],
+	"rules": {
+		"space-before-function-paren": 0,
+		"semi": [2, "always"]
+	},
+	"plugins": ["jest"],
+	"env": {
+		"node": true,
+		"jest/globals": true
+	}
 }

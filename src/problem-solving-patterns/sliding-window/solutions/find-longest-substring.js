@@ -5,24 +5,15 @@
 // Time Complexity - O(n^2)
 
 function findLongestSubstringVersion1(str) {
-	let obj = {};
-	let i = 0;
-	let maxLen = 0;
-	let tempLen = 0;
-	while (i < str.length) {
-		if (typeof obj[str[i]] !== "undefined") {
-			tempLen = 0;
-			i = obj[str[i]] + 1;
-			obj = {};
-		} else {
-			obj[str[i]] = i;
-			tempLen++;
-			i++;
-		}
-		maxLen = Math.max(maxLen, tempLen);
+	if (str.length === 0) {
+		return 0;
 	}
-
-	return maxLen;
+	let longestSubStr = 1;
+	let subStr = [];
+	for (const letter of str) {
+		if (!subStr.find()) {
+		}
+	}
 }
 
 console.log(findLongestSubstringVersion1("")); // 0
@@ -32,20 +23,15 @@ console.log(findLongestSubstringVersion1("thisisawesome")); // 6
 // Time Complexity - O(n)
 
 function findLongestSubstringVersion2(str) {
-	const obj = {};
-	let maxLen = 0;
-	let start = 0;
-
-	for (let i = 0; i < str.length; i++) {
-		if (obj[str[i]]) {
-			start = Math.max(start, obj[str[i]]);
+	let obj = { [str[0]]: 1, [str[1]]: 1 };
+	let i = 0;
+	let j = 1;
+	let substr;
+	for (const letter of str) {
+		if (!obj[letter]) {
+			obj[letter] = 1;
 		}
-
-		obj[str[i]] = i + 1;
-		maxLen = Math.max(maxLen, i - start + 1);
 	}
-
-	return maxLen;
 }
 
 console.log(findLongestSubstringVersion2("")); // 0

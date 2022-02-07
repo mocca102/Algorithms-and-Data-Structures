@@ -8,19 +8,19 @@
     "url": "https://github.com/NKaty/Algorithms-and-Data-Structures.git"
   },
   "scripts": {
-    "lint": "eslint ./src/*"
+    "lint": "eslint ./src/*",
+    "test": "jest"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "author": "NKaty",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.28.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^26.1.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
+    "jest": "^27.4.7",
     "pre-commit": "^1.2.2"
   }
 }
