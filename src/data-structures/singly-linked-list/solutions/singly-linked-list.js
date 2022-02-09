@@ -18,6 +18,7 @@ class SinglyLinkedList {
 		}
 
 		this.length++;
+		return this;
 	}
 
 	traverse() {
@@ -75,6 +76,7 @@ class SinglyLinkedList {
 			this.tail = newNode;
 		}
 		this.length++;
+		return this;
 	}
 
 	get(index) {
