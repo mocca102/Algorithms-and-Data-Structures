@@ -88,6 +88,55 @@ class BinarySearchTree {
 			? this.find(value, current.right)
 			: this.find(value, current.left);
 	}
+
+	breadthFirstSearch() {
+		if (!this.root) return null;
+		let values = [];
+		let queue = [];
+		queue.push(this.root);
+
+		while (queue.length) {
+			const node = queue.shift();
+			values.push(node.value);
+			if (node.left) queue.push(node.left);
+			if (node.right) queue.push(node.right);
+		}
+		return values;
+	}
+
+	// can be used to clone tree
+	depthFirstPreOrder(node = this.root) {
+		if (!node) return [];
+		const left = this.depthFirstPreOrder(node.left);
+		const right = this.depthFirstPreOrder(node.right);
+		return [node.value, ...left, ...right];
+	}
+
+	depthFirstPostOrder(node = this.root) {
+		if (!node) return [];
+		const left = this.depthFirstPostOrder(node.left);
+		const right = this.depthFirstPostOrder(node.right);
+		return [...left, ...right, node.value];
+	}
+
+	// gets tree values in order
+	depthFirstInOrder(node = this.root) {
+		if (!node) return [];
+		const left = this.depthFirstInOrder(node.left);
+		const right = this.depthFirstInOrder(node.right);
+		return [...left, node.value, ...right];
+	}
 }
 
-const binarySearchTree1 = new BinarySearchTree();
+const tree = new BinarySearchTree();
+
+tree
+	.insert(7)
+	.insert(4)
+	.insert(10)
+	.insert(2)
+	.insert(5)
+	.insert(9)
+	.insert(11)
+	.insert(1)
+	.insert(3);
